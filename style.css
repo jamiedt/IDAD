@@ -94,7 +94,7 @@ a:visited {
 .unclickable {
   pointer-events: none;
   cursor: default; /* Keeps the mouse pointer from changing into a hand */
-  text-decoration: strike-through; /* Removes the underline styling */
+  text-decoration: line-through; /* Removes the underline styling */
 }
 
 /*technique from Kevin Powell*/
