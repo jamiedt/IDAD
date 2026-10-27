@@ -99,10 +99,87 @@
 
         <br />
         <section>
-          <h3></h3>
-          <p></p>
-        </section>
+          <h3>Core Interactive Features and Design System Documentation</h3>
+          <h4>Feeling-based event creation:</h4>
+          <p>
+            Clicking on a day opens a form for the event’s name, date, start
+            time and finish time, followed by the three feeling sliders. Events
+            are saved in the browser, so they are still there when the user
+            returns. Each slider stores a number from 0 to 100 and these values
+            are saved as an object in localStorage.
+          </p>
+          <img src="" alt="" />
+          <p>
+            sliderColour then turns each number into a colour and is used for
+            the slider track too, so the slider changes colour live as it is
+            dragged. Describing an event by feeling instead of by technical
+            parameters is my central design decision around this, keeping the
+            focus on emotion, and the fact that anyone can use the instrument
+            without musical knowledge.
+          </p>
 
+          <br />
+          <h4>Play Calendar mode:</h4>
+          <p>
+            The calendar grid is replaced by a field of orbs, each relating to
+            an event on the calendar laid out in the same position as its day
+            would be on the calendar. A translucent circular aura, follows the
+            cursor and any orb it touches and plays its corresponding sound.
+            Touching several orbs at once plays them together as a chord and can
+            create some interesting interactions. The sound uses the Tone.js
+            library. Each orb gets its own synthesiser the first time it is
+            touched, built from that event’s sliders. The Boring - Exciting
+            slider changes pitch, from a low C3 to a high C5 with 14 steps in
+            between. The Business - Leisure slider changes the sound from bright
+            to mellow by applying a low-pass filter whose cutoff slides from
+            5000 Hz down to 500 Hz. The Slow - Fast slider changes the attack
+            and release from being a gentle fade to an abrupt snap. Because
+            every pitch comes from the same scale, any combination of events
+            sounds harmonious, and the user cannot make something clash. Each
+            slider’s label describes what the user hears, so an event described
+            as “slow, leisurely and boring” sounds slow, mellow and low. This
+            gives the calendar its own sonic voice and turns it into a record of
+            how the events feel.
+          </p>
+
+          <br />
+          <h4>Extended technique: Date/time</h4>
+          <p>
+            The project features JavaScript’s Date object. Time helps to label
+            events, decide how the calendar is laid out, and figure out how
+            large each orb is. Every day has a YYYY-MM-DD key, so events are
+            matched to the correct cell in both the calendar and the play
+            screen. Start and finish times are converted into minutes, which is
+            then converted to set the orb size. The scenario asks for a
+            relationship with time that doesn’t have to be a measurement. Time
+            is still the structure here but the user doesn’t experience it just
+            as numbers. In the play area the position shows the date, size shows
+            the duration and sound shows how the time felt. The calendar’s
+            quantitative frame becomes the foundation for a qualitative, felt
+            experience.
+          </p>
+
+          <br />
+          <h4>Design System:</h4>
+          <p>
+            The design aims to feel calm, personal and slightly playful, more
+            like an instrument than a spreadsheet. The interface uses an indigo
+            palette that switches between light and dark with the user’s system
+            setting. All vivid colour is reserved for the feeling sliders, so
+            colour always carries meaning and is never just decoration. The
+            middle of each slider is grey, so an event only gains character as
+            the user pushes it towards a feeling. Lexend is used for headings
+            and buttons as its rounded and friendly form suits the personal
+            tone. Orbs are satisfying circles that brighten and grow slightly
+            when played, with the aura giving the cursor a physical presence.
+            Each orb has a black centre so the event name stays readable, and
+            the coloured rings help to characterise each event. The overall look
+            reinforces the idea that a calendar can have a personality, and the
+            visuals stay expressive without getting in the way of a functional
+            calendar.
+          </p>
+
+         
         <br />
         <section>
           <h3>Git Commits</h3>
